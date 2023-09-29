@@ -25,11 +25,11 @@
             <Label 
                 Text="Beteg neve"
              />
-            <Entry Text="{Binding Beteg.Nev}"/>
+            <Entry Text="{Binding Nev}"/>
             <Entry 
                 Keyboard="Numeric"
                 Placeholder="Súly"
-                Text="{Binding Beteg.Suly}">
+                Text="{Binding Suly}">
                 <Entry.Behaviors>
                     <toolkit:NumericValidationBehavior 
                         InvalidStyle="{StaticResource InvalidEntryStyle}"
@@ -45,7 +45,7 @@
             <Entry 
                 Keyboard="Numeric"
                 Placeholder="Magasság"
-                Text="{Binding Beteg.Magassag}">
+                Text="{Binding Magassag}">
                 <Entry.Behaviors>
                     <toolkit:NumericValidationBehavior 
                         InvalidStyle="{StaticResource InvalidEntryStyle}"
@@ -58,11 +58,15 @@
                 </Entry.Behaviors>
             </Entry>
             <Button Text="TTI számítás" Command="{Binding DoTTIComputeCommand}" />
-            <Label Text="Eredmény:" />
-            <Label Text="TTI:" />
-            <Label Text="{Binding TTI}" />
-            <Label Text="Beteg adatok:" />
-            <Label Text="{Binding BetegAdatok}" />
+            <Frame Padding="10,5,10,5" IsVisible="{Binding ResultIsVisible}" BackgroundColor="Aquamarine">
+                <VerticalStackLayout >
+                    <Label Text="Eredmény:" />
+                    <Label Text="TTI:" />
+                    <Label Text="{Binding TTI}" />
+                    <Label Text="Beteg adatok:" />
+                    <Label Text="{Binding BetegAdatok}" />
+                </VerticalStackLayout>
+            </Frame>
 
         </VerticalStackLayout>
     </ScrollView>
