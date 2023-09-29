@@ -9,9 +9,11 @@
     </ContentPage.BindingContext>
     <ScrollView>
         <VerticalStackLayout
-            Spacing="25"
-            Padding="30,0"
-            VerticalOptions="Center">
+            Spacing="4"
+            Padding="10,5,10,5"
+            VerticalOptions="Start"
+         >
+            <Label HorizontalOptions="Center" FontSize="Large" Text="TTI adatszámítás"/>
 
         </VerticalStackLayout>
     </ScrollView>
