@@ -1,6 +1,8 @@
-﻿namespace TTIProject.ViewModels
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+
+namespace TTIProject.ViewModels
 {
-    public class BetegViewModel
+    public partial class BetegViewModel : ObservableObject
     {
     }
 }
