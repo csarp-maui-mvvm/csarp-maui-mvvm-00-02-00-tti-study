@@ -14,7 +14,11 @@
             VerticalOptions="Start"
          >
             <Label HorizontalOptions="Center" FontSize="Large" Text="TTI adatszámítás"/>
-
+            <Label 
+                Text="Beteg neve"
+             />
+            <Entry Text="{Binding Beteg.Nev}"/>
+            
         </VerticalStackLayout>
     </ScrollView>
 
