@@ -7,6 +7,14 @@
     <ContentPage.BindingContext>
         <viewmodel:BetegViewModel/>
     </ContentPage.BindingContext>
+    <ContentPage.Resources>
+        <Style x:Key="InvalidEntryStyle" TargetType="Entry">
+            <Setter Property="TextColor" Value="Red" />
+        </Style>
+        <Style x:Key="ValidEntryStyle" TargetType="Entry">
+            <Setter Property="TextColor" Value="Green" />
+        </Style>
+    </ContentPage.Resources>
     <ScrollView>
         <VerticalStackLayout
             Spacing="4"
@@ -18,7 +26,38 @@
                 Text="Beteg neve"
              />
             <Entry Text="{Binding Beteg.Nev}"/>
-            
+            <Entry 
+                Keyboard="Numeric"
+                Placeholder="Súly"
+                Text="{Binding Beteg.Suly}">
+                <Entry.Behaviors>
+                    <toolkit:NumericValidationBehavior 
+                        InvalidStyle="{StaticResource InvalidEntryStyle}"
+                        ValidStyle="{StaticResource ValidEntryStyle}"
+                        Flags="ValidateOnValueChanged"
+                        MinimumValue="30.0"
+                        MaximumValue="150.0"
+                        MaximumDecimalPlaces="2">
+                    </toolkit:NumericValidationBehavior>
+                </Entry.Behaviors>
+            </Entry>
+            <Label Text="Beteg magassága"/>
+            <Entry 
+                Keyboard="Numeric"
+                Placeholder="Magasság"
+                Text="{Binding Beteg.Magassag}">
+                <Entry.Behaviors>
+                    <toolkit:NumericValidationBehavior 
+                        InvalidStyle="{StaticResource InvalidEntryStyle}"
+                        ValidStyle="{StaticResource ValidEntryStyle}"
+                        Flags="ValidateOnValueChanged"
+                        MinimumValue="0.5"
+                        MaximumValue="2.5"
+                        MaximumDecimalPlaces="2">
+                    </toolkit:NumericValidationBehavior>
+                </Entry.Behaviors>
+            </Entry>
+
         </VerticalStackLayout>
     </ScrollView>
 
