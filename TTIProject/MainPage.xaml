@@ -57,6 +57,12 @@
                     </toolkit:NumericValidationBehavior>
                 </Entry.Behaviors>
             </Entry>
+            <Button Text="TTI számítás" Command="{Binding DoTTIComputeCommand}" />
+            <Label Text="Eredmény:" />
+            <Label Text="TTI:" />
+            <Label Text="{Binding TTI}" />
+            <Label Text="Beteg adatok:" />
+            <Label Text="{Binding BetegAdatok}" />
 
         </VerticalStackLayout>
     </ScrollView>
